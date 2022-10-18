@@ -78,7 +78,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  height: 70px;
+  height: 90px;
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
@@ -114,7 +114,7 @@ h6 {
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 50px;
+  max-height: 70px;
 }
 
 /*--------------------------------------------------------------
@@ -347,20 +347,25 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  overflow: hidden;
-  position: relative;
-  background: linear-gradient(0deg, rgb(42, 44, 57) 0%, rgb(51, 54, 74) 100%);
-  padding: 0;
+    overflow: hidden;
+    position: relative;
+    background-image: url('../img//banner.jpg');
+    padding: 0;
+    background-size: cover;
+    background-position-x: right;
 }
-
+.about-content{
+  font-size: 18px;
+}
 #hero .carousel-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   flex-direction: column;
-  text-align: center;
+  text-align: start;
   position: relative;
-  height: 70vh;
+  height: 90vh;
+  width: 60%;
   padding-top: 60px;
 }
 
@@ -375,10 +380,14 @@ h6 {
   width: 80%;
   -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
-  margin: 0 auto 30px auto;
   color: #fff;
 }
-
+.about-img{
+  height: 320px;
+  margin: auto;
+  align-self: center;
+  display: flex;
+}
 #hero .carousel-control-prev,
 #hero .carousel-control-next {
   width: 10%;
@@ -417,13 +426,12 @@ h6 {
 }
 
 @media (min-width: 1024px) {
-  #hero p {
-    width: 60%;
-  }
-
   #hero .carousel-control-prev,
   #hero .carousel-control-next {
     width: 5%;
+  }
+  #heroCarousel{
+    margin-left: 120px;
   }
 }
 
@@ -639,6 +647,27 @@ section {
   text-decoration: none;
 }
 
+.about .icon-box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.about .icon{
+  font-size: 40px;
+}
+
+.about .icon-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 2px 35px 0 rgba(68, 88, 144, 0.2);
+}
+
 /*--------------------------------------------------------------
 # Features
 --------------------------------------------------------------*/
@@ -760,6 +789,21 @@ section {
 .cta .cta-btn:hover {
   background: #fff;
   color: #03188a;
+}
+.cta-bg{
+  background-image: url('../img/we-deliver.jpg');
+  background-size: cover;
+  background-position-y: center;
+  position: relative;
+}
+.cta-bg::before{
+  content: '';
+    background-color: #404356d4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 @media (max-width: 1024px) {
@@ -1582,6 +1626,29 @@ section {
   .breadcrumbs ol li {
     display: inline-block;
   }
+  #hero .carousel-container h2, #hero .carousel-container p{
+    width: 100%;
+    text-align: center !important;
+    padding: 0 20px;
+  }
+  #hero .carousel-container{
+    width: 100%;
+  }
+  #header.header-scrolled li a{
+    color: #14151c;
+  }
+  .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a{
+    color: #fff !important;
+  }
+}
+.header-scrolled .mobile-nav-toggle{
+  color: #fff !important;
+}
+.mobile-nav-toggle{
+  color: #14151c;
+}
+.mobile-nav-toggle.bi-x{
+  color: #fff !important;
 }
 
 /*--------------------------------------------------------------
@@ -1643,4 +1710,24 @@ section {
 
 #footer .credits {
   font-size: 13px;
+}
+
+.footer-link{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+.footer-link a {
+  color: white;
+  font-size: 16px;
+  text-align: left;
+  
+}
+.footer-one{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
